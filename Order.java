@@ -3,35 +3,18 @@ public class Order {
     private String userId;
     private String proId;
     private String orderTime;
-
-    /**
-     * Constructs an order object.
-     * @param orderId Must be a unique string, format is o_5 digits such as o_12345
-     * @param userId ID of the user who placed the order
-     * @param proId ID of the product ordered
-     * @param orderTime Format: "DD-MM-YYYY_HH:MM:SS"
-     */
     public Order(String orderId, String userId, String proId, String orderTime) {
         this.orderId = orderId;
         this.userId = userId;
         this.proId = proId;
         this.orderTime = orderTime;
     }
-
-    /**
-     * Default constructor
-     */
     public Order() {
         this.orderId = "";
         this.userId = "";
         this.proId = "";
         this.orderTime = "";
     }
-
-    /**
-     * Returns the order information as a formatted string.
-     * @return String in JSON-like format
-     */
     @Override
     public String toString() {
         return String.format(
@@ -40,4 +23,3 @@ public class Order {
         );
     }
 }
-

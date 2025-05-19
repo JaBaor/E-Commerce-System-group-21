@@ -8,17 +8,6 @@ public class Product {
     private double proDiscount;
     private int proLikesCount;
 
-    /**
-     * Constructs a product object.
-     * @param proId Product ID (must be unique)
-     * @param proModel Product model
-     * @param proCategory Product category
-     * @param proName Product name
-     * @param proCurrentPrice Current price of the product
-     * @param proRawPrice Original price of the product
-     * @param proDiscount Discount percentage
-     * @param proLikesCount Number of likes
-     */
     public Product(String proId, String proModel, String proCategory,
                    String proName, double proCurrentPrice, double proRawPrice,
                    double proDiscount, int proLikesCount) {
@@ -32,9 +21,6 @@ public class Product {
         this.proLikesCount = proLikesCount;
     }
 
-    /**
-     * Default constructor
-     */
     public Product() {
         this.proId = "";
         this.proModel = "";
@@ -46,10 +32,6 @@ public class Product {
         this.proLikesCount = 0;
     }
 
-    /**
-     * Returns the product information as a formatted string.
-     * @return String in JSON-like format
-     */
     @Override
     public String toString() {
         return String.format("{\"pro_id\":\"%s\", \"pro_model\":\"%s\", " +

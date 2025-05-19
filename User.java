@@ -13,6 +13,22 @@ public class User {
      * @param userRegisterTime Format: "DD-MM-YYYY_HH:MM:SS"
      * @param userRole Default value: "customer"
      */
+    public User(String json) {
+        // Simple parsing using regular expressions (no external libraries)
+        this.userId = extractJsonValue(json, "user_id");
+        this.userName = extractJsonValue(json, "user_name");
+        this.userPassword = extractJsonValue(json, "user_password");
+        this.userRegisterTime = extractJsonValue(json, "user_register_time");
+        this.userRole = extractJsonValue(json, "user_role");
+    }
+
+    // Helper method to extract value for a given key from a JSON-like string
+    private String extractJsonValue(String json, String key) {
+        String pattern = "\""+key+"\":\"([^\"]*)\"";
+        java.util.regex.Matcher matcher = java.util.regex.Pattern.compile(pattern).matcher(json);
+        return matcher.find() ? matcher.group(1) : "";
+    }
+
     public User(String userId, String userName, String userPassword,
                 String userRegisterTime, String userRole) {
         this.userId = userId;
